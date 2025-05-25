@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Your Order – Dop on Demand</title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Place Your Order</h1>
+    <p>Browse our products and add to your order.</p>
+  </header>
+
+  <main class="store-layout">
+    <!-- Customer Mode Banner -->
+    <div id="customer-mode-banner" style="margin-bottom: 1rem; font-weight: bold;"></div>
+
+    <!-- Optional Category Tabs -->
+  <div class="tabs">
+  <button onclick="showCategory('beer')">Beer</button>
+  <button onclick="showCategory('spirits')">Spirits</button>
+  <button onclick="showCategory('brandy')">Brandy</button>
+  <button onclick="showCategory('ciders')">Ciders</button>
+  <button onclick="showCategory('gin')">Gin</button>
+  <button onclick="showCategory('liquers')">Liquers</button>
+  <button onclick="showCategory('tequila')">Tequila</button>
+  <button onclick="showCategory('vodka')">Vodka</button>
+  <button onclick="showCategory('whisky')">Whisky</button>
+  <button onclick="showCategory('wines')">Wines</button>
+</div>
+
+
+    <!-- Product Grids -->
+    <div id="beer" class="product-grid active-category"></div>
+    <div id="wine" class="product-grid" style="display: none;"></div>
+    <div id="spirits" class="product-grid" style="display: none;"></div>
+    <div id="brandy" class="product-grid" style="display: none;"></div>
+    <div id="ciders" class="product-grid" style="display: none;"></div>
+    <div id="gin" class="product-grid" style="display: none;"></div>
+    <div id="liquers" class="product-grid" style="display: none;"></div>
+    <div id="tequila" class="product-grid" style="display: none;"></div>
+    <div id="vodka" class="product-grid" style="display: none;"></div>
+    <div id="whisky" class="product-grid" style="display: none;"></div>
+    <div id="wines" class="product-grid" style="display: none;"></div>
+
+    <!-- Private Customer Form -->
+    <div id="private-fields">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idcopy">Proof of ID (Upload Image):</label>
+        <input type="file" id="idcopy" name="proofid" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Delivery Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+    </div>
+
+    <!-- Business Customer Form -->
+    <div id="business-fields" style="display: none;">
+      <div class="form-group">
+        <label for="bizname">Business Name:</label>
+        <input type="text" id="bizname" name="bizname">
+      </div>
+
+      <div class="form-group">
+        <label for="contactperson">Contact Person:</label>
+        <input type="text" id="contactperson" name="contactperson">
+      </div>
+
+      <div class="form-group">
+        <label for="phonebiz">Phone Number:</label>
+        <input type="tel" id="phonebiz" name="phonebiz">
+      </div>
+
+      <div class="form-group">
+        <label for="emailbiz">Email:</label>
+        <input type="email" id="emailbiz" name="emailbiz">
+      </div>
+
+      <div class="form-group">
+        <label for="vat">VAT Number (optional):</label>
+        <input type="text" id="vat" name="vat">
+      </div>
+
+      <div class="form-group">
+        <label for="addressbiz">Delivery Address:</label>
+        <textarea id="addressbiz" name="addressbiz" rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- Order Summary Popup -->
+    <div id="order-summary" class="popup-overlay">
+      <div class="popup-content">
+        <h2>🛒 Order Summary</h2>
+        <div id="summary-details"></div>
+        <button onclick="alert('Order confirmed and sent!')" style="margin-left: 1rem; background-color: #28a745;">Confirm Order</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dop on Demand. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
