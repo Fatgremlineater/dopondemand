@@ -1,0 +1,65 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dop on Demand – Login</title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h1>Business Login</h1>
+    <form id="login-form">
+      <label for="email">Email:</label>
+      <input type="email" id="login-email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="login-password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-error" style="color: red; display: none;">Invalid login. Please try again.</p>
+  </div>
+
+  <script>
+    // Demo user database
+    const users = [
+      {
+        email: "reseller@example.com",
+        password: "dop123",
+        businessName: "Dop City Liquors",
+        contactPerson: "Thabo M",
+        phone: "+27 62 159 9027",
+        vat: "1234567890",
+        address: "Growthpoint Business Park"
+      },
+      {
+        email: "store@vodka.co.za",
+        password: "vodka2025",
+        businessName: "Vodka Vault",
+        contactPerson: "Lisa P",
+        phone: "+27 82 000 1234",
+        vat: "",
+        address: "Cape Town Liquor Lane"
+      }
+    ];
+
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        localStorage.setItem("dod_user", JSON.stringify(user));
+        window.location.href = "order.html?type=business";
+      } else {
+        document.getElementById("login-error").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
